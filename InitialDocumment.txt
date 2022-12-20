@@ -1,0 +1,31 @@
+System requirements: LotteryKotlin
+What is asked:
+ System must be able to create a random lottery draw
+ System must be able to add players
+ System must be able to draw random numbers for players
+ System must be able to determine if someone won
+ 
+ A game is worth $6
+ The number limit per game is 6 numbers (Max value being 60)
+ 
+Classes that will be used:
+ Player (Has name, and a ticket)
+ Ticket (Has six random numbers)
+ Randomizer (Returns an array of random numbers, based on a limit of draws and max value)
+ Verifier (Verifies if the numbers randomized coincide with the player ticket)
+ Raffle (Makes the interaction happen between all classes)
+ Game (Defines the rules that a game will follow, example: Defines the limit of numbers being draw, or the highest value possible, or the value of each game)
+ 
+Main idea: Have a menu interface that selects a determined type of game.
+ Then, it will be possible to add players, with tickets and numbers, determined by the game selected. For each ticket, there will be a price.
+ Then, it will be possible to create a raffle, if there is one or more players.
+ After the raffle happens, the system verifies if a ticket has won, and will return the corresponding player with the prize pool.
+ 
+ 
+Additional implementation ideas:
+	Have a graphic interface for all the things that happen during the program execution
+	Have a repository that saves all the raffles that happened
+	
+ 
+ 
+ 	
