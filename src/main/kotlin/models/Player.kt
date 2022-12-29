@@ -1,11 +1,9 @@
 package models
 
-class Player {
-    val name: String
-    var ticket: Array<Ticket>
+data class Player(val name: String) {
+    lateinit var ticket: MutableSet<Ticket>
 
-    constructor(name: String, ticket: Array<Ticket>){
-        this.name = name
+    constructor(name: String, ticket: MutableSet<Ticket>) : this(name){
         this.ticket = ticket
     }
 }

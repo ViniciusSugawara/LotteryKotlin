@@ -14,7 +14,7 @@ Classes that will be used:
  Randomizer (Returns an array of random numbers, based on a limit of draws and max value)
  Verifier (Verifies if the numbers randomized coincide with the player ticket)
  Raffle (Makes the interaction happen between all classes)
- Game (Defines the rules that a game will follow, example: Defines the limit of numbers being draw, or the highest value possible, or the value of each game)
+ Game (Defines the rules that a game will follow, example: Defines the limit of numbers being drawn, or the highest value possible, or the value of each game)
  
 Main idea: Have a menu interface that selects a determined type of game.
  Then, it will be possible to add players, with tickets and numbers, determined by the game selected. For each ticket, there will be a price.
