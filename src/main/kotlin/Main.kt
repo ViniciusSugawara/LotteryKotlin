@@ -6,35 +6,35 @@ import models.Randomizer
 fun main() {
     println("Sistema de loteria, adaptado para Kotlin.")
 
-    val game = Game(10, 2, 6.0)
-    val ticketRandomizer = Randomizer(game.maxNumber, game.limitOfNumbersDrawn)
-    val testTicket = Ticket(ticketRandomizer.randomizedNumbers)
-    val anotherTicket = Ticket(ticketRandomizer.randomizedNumbers)
+    val mainGame = Game(10, 2, 6.0)
+    val ticketRandomizer = Randomizer(mainGame.maxNumber, mainGame.limitOfNumbersDrawn)
+    val playerTicket = Ticket(ticketRandomizer.randomizedNumbers)
+    val playerTicket2 = Ticket(ticketRandomizer.randomizedNumbers)
 
-    println("First ticket: Numbers are")
-    testTicket.numbers.forEach{
-        println(it)
+    println("First ticket: Numbers are:")
+    playerTicket.numbers.forEach{
+        print("$it, ")
     }
 
-    println("Second ticket: Numbers are")
-    for(i in anotherTicket.numbers){
-        println(i)
+    println("Second ticket: Numbers are:")
+    for(i in playerTicket2.numbers){
+        print("$i, ")
     }
 
-    val allTickets: MutableSet<Ticket> = mutableSetOf(testTicket, anotherTicket)
-    val playerOne = Player("Josh", allTickets)
+    val playerTickets: MutableSet<Ticket> = mutableSetOf(playerTicket, playerTicket2)
+    val playerOne = Player("Josh", playerTickets)
 
     println("The following player has been added: ${playerOne.name}")
 
-    val mainRandomizer = Randomizer(game.maxNumber, game.limitOfNumbersDrawn)
+    val raffle = Randomizer(mainGame.maxNumber, mainGame.limitOfNumbersDrawn)
 
-    val premiumTicket = Ticket(mainRandomizer.randomizedNumbers)
+    val premiumTicket = Ticket(raffle.randomizedNumbers)
+
     premiumTicket.numbers.forEach{
-
         println("Numbers drawn were " + it)
     }
 
-    for(ticket in allTickets){
+    for(ticket in playerTickets){
         when(ticket.equals(premiumTicket)){
             true -> println("Has won")
             else -> println("Hasn't won")

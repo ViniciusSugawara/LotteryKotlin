@@ -1,19 +1,19 @@
 package models
 import kotlin.random.Random
 
-class Randomizer(val numberLimit: Int, val maxNumber: Int) {
+class Randomizer(val drawLimit: Int, val maxNumber: Int) {
     var randomizedNumbers: MutableSet<Int> = mutableSetOf()
         get(){
-            field = generate()
+            field = generateSet()
             return field
         }
 
-    private fun generate(): MutableSet<Int>{
+    private fun generateSet(): MutableSet<Int>{
         var generatedSet: MutableSet<Int> = mutableSetOf()
         do{
-            generatedSet.add(rand())
+            generatedSet.add(generateRandomInt())
         } while(generatedSet.size < maxNumber)
         return generatedSet
     }
-    private fun rand() = Random(System.nanoTime()).nextInt(1, numberLimit+1)
+    private fun generateRandomInt() = Random(System.nanoTime()).nextInt(1, drawLimit+1)
 }
