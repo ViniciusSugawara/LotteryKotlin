@@ -1,7 +1,8 @@
 import models.Game
 import models.Player
 import models.Ticket
-import models.Randomizer
+import services.Randomizer
+import services.Verifier
 
 //TODO - remove logic from main class and work with other classes, to separate responsibilities
 fun main() {

@@ -1,4 +1,4 @@
-package models
+package services
 import kotlin.random.Random
 
 //This class has the resonsibility of generating random numbers determined by two conditions:
