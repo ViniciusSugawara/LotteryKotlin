@@ -45,16 +45,14 @@ fun main() {
     }
 
     println()
-    //Here i use a For loop with Ticket, so that i can find if any of the numbers are equal to the premium ticket.
-    for(ticket in playerTickets){
-        if(ticket.equals(premiumTicket)){
-            println("Has won")
-            break
+
+    //Refactored so that i use my verifier class to check if someone has won.
+    val verifier = Verifier(playerOne, premiumTicket)
+        if(verifier.verifyRaffle()){
+            println("${verifier.player.name} has won!")
         } else {
             println("Nobody has won")
         }
-    }
-
-    print("The prize pool was ${mainGame.price * playerTickets.size}")
+    print("The prize pool was ${mainGame.price * playerOne.tickets.size}")
 
 }
